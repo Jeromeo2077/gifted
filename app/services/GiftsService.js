@@ -7,6 +7,7 @@ class GiftsService {
   openGift() {
     console.log('Gift has been received by Service');
 
+
   }
 
   async getGifts() {
