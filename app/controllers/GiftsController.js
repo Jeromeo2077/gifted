@@ -22,6 +22,9 @@ export class GiftsController {
 
   drawGifts() {
     const gift = AppState.gift
-    setHTML('gift-template', gift.giftsHTMLTemplate)
+    let giftHTML = ''
+
+    gift.forEach(gift => giftHTML += gift.giftsHTMLTemplate)
+    setHTML('gift-template', giftHTML)
   }
 }

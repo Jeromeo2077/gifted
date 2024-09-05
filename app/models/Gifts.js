@@ -9,11 +9,11 @@ export class Gift {
   get giftsHTMLTemplate() {
     return `
     <div class="col-3">
-              <div class="card">
-                <img src="${this.url}" alt="${this.tag}">
-                <p>${this.tag}</p>
-              </div>
-            </div>
+       <div class="card">
+          <img src="${this.url}" alt="${this.tag}">
+          <p>${this.tag}</p>
+        </div>
+      </div>
     `
   }
 }

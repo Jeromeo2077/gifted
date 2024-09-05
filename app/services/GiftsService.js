@@ -8,8 +8,11 @@ class GiftsService {
   async getGifts() {
     const response = await api.get('/api/gifts')
     console.log('Received Gifts!', response.data);
-    const newGift = new Gift(response.data)
-    AppState.gift = newGift
+
+    const gift = response.data.map(giftData => new Gift(giftData))
+
+
+    AppState.gift = gift
     console.log('Logging Appstate', AppState.gift);
 
   }
