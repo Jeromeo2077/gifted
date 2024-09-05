@@ -4,17 +4,17 @@ import { Gift } from "../models/Gifts.js";
 
 
 class GiftsService {
+  openGift() {
+    console.log('Gift has been received by Service');
+
+  }
 
   async getGifts() {
     const response = await api.get('/api/gifts')
-    console.log('Received Gifts!', response.data);
 
     const gift = response.data.map(giftData => new Gift(giftData))
 
-
     AppState.gift = gift
-    console.log('Logging Appstate', AppState.gift);
-
   }
 }
 

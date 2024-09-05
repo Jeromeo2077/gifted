@@ -27,4 +27,10 @@ export class GiftsController {
     gift.forEach(gift => giftHTML += gift.giftsHTMLTemplate)
     setHTML('gift-template', giftHTML)
   }
+
+  openGift() {
+    console.log('Gift has been received by Controller');
+    giftsService.openGift()
+
+  }
 }

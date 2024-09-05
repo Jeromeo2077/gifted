@@ -9,7 +9,7 @@ export class Gift {
   get giftsHTMLTemplate() {
     return `
       <div class="col-3">
-        <div class="card m-1">
+        <div onclick="app.GiftsController.openGift()" class="card m-1">
             <img src="${this.url}" alt="${this.tag}">
             <p>${this.tag}</p>
         </div>
