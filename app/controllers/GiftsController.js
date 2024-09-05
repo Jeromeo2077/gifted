@@ -5,6 +5,7 @@ export class GiftsController {
   constructor() {
     console.log('GiftsController has loaded');
 
+    this.getGifts()
   }
 
   async getGifts() {
