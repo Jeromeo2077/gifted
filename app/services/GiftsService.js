@@ -6,13 +6,17 @@ import { Gift } from "../models/Gifts.js";
 class GiftsService {
   async openGift(giftId) {
 
-    const gift = AppState.gift.find(gift => gift.id == giftId)
+    const gifts = AppState.gift
+    const giftIndex = AppState.gift.findIndex(gift => gift.id == giftId)
+    const gift = gifts[giftIndex]
 
     console.log('Gift has been received by Service', giftId, gift);
 
     const giftData = { opened: true }
 
     const response = await api.put(`api/gifts/${giftId}`, giftData)
+    const updatedGift = new Gift(response.data)
+    gifts.splice(giftIndex, 1, updatedGift)
 
   }
 
