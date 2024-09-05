@@ -28,9 +28,9 @@ export class GiftsController {
     setHTML('gift-template', giftHTML)
   }
 
-  openGift() {
+  openGift(giftId) {
     console.log('Gift has been received by Controller');
-    giftsService.openGift()
+    giftsService.openGift(giftId)
 
   }
 }

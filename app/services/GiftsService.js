@@ -4,9 +4,11 @@ import { Gift } from "../models/Gifts.js";
 
 
 class GiftsService {
-  openGift() {
-    console.log('Gift has been received by Service');
+  openGift(giftId) {
 
+    const gift = AppState.gift.find(gift => gift.id == giftId)
+
+    console.log('Gift has been received by Service', giftId, gift);
 
   }
 
