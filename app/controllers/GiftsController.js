@@ -28,9 +28,17 @@ export class GiftsController {
     setHTML('gift-template', giftHTML)
   }
 
-  openGift(giftId) {
-    console.log('Gift has been received by Controller');
-    giftsService.openGift(giftId)
+  async openGift(giftId) {
+    try {
+      console.log('Gift has been received by Controller');
+      await giftsService.openGift(giftId)
+
+    } catch (error) {
+      Pop.error(error)
+      console.error(error);
+
+    }
+
 
   }
 }

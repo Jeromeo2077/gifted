@@ -5,7 +5,7 @@ export class Gift {
     this.creatorId = data.creatorId
     this.id = data.id
 
-    this.opened = false //Boolean
+    this.opened = data.opened || false
   }
 
   get giftsHTMLTemplate() {
